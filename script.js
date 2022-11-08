@@ -100,7 +100,7 @@ function initialize(){ //Initalizes the whole Game
             }
             keyboardRow.appendChild(keyTile);
         }
-        document.getElementById("gameBar").appendChild(keyboardRow);
+        document.body.appendChild(keyboardRow);
     }    
     //System keyboard
     document.addEventListener("keyup",(e)=>{
