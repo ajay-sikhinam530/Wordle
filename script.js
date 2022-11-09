@@ -1,7 +1,7 @@
 /*["Q","W","E","R","T","Y","U","I","O","P"]
 ["A","S","D","F","G","H","J","K","L"," "]
 ["Enter","Z","X","C","V","B","N","M","->"]*/
-
+console.log("checker")
 var height = 6;
 var width = 5;
 
@@ -11,28 +11,28 @@ var col = 0;
 var gameOver = false;
 var highScore = 0;
 
-var wordList =['about', 'alert', 'argue', 'beach', 'above', 'alike', 'arise', 'began', 'abuse', 'alive', 'array', 'begin', 'actor', 'allow', 'aside','begun', 'acute', 'alone', 'asset', 'being', 'admit', 'along', 'audio', 'below', 'adopt', 'alter', 'audit', 'bench', 'adult', 'among', 'avoid', 'billy', 'after', 'anger', 'award', 'birth', 'again', 'angle', 'aware', 'black', 'agent', 'angry', 'badly', 'blame', 'agree', 'apart', 'baker', 'blind', 'ahead', 'apple', 'bases', 'block', 'alarm', 'apply', 'basic', 'blood', 'album', 'arena', 'basis', 'board', 'boost', 'buyer', 'china', 'cover', 'booth', 'cable', 'chose', 'craft', 'bound', 'calif', 'civil', 'crash', 'brain', 'carry', 'claim', 'cream', 'brand', 'catch', 'class', 'crime', 'bread', 'cause', 'clean', 'cross', 'break', 'chain', 'clear', 'crowd', 'breed', 'chair', 'click', 'crown', 'brief', 'chart', 'clock', 'curve', 'bring', 'chase', 'close', 'cycle', 'broad', 'cheap', 'coach', 'daily', 'broke', 'check', 'coast', 'dance', 'brown', 'chest', 'could', 'dated', 'build', 'chief', 'count', 'dealt', 'built', 'child', 'court', 'death', 'debut', 'entry', 'forth', 'group', 'delay', 'equal', 'forty', 'grown', 'depth', 'error', 'forum', 'guard', 'doing', 'event', 'found', 'guess', 'doubt', 'every', 'frame', 'guest', 'dozen', 'exact', 'frank', 'guide', 'draft', 'exist', 'fraud', 'happy', 'drama', 'extra', 'fresh','harry', 'drawn', 'faith', 'front', 'heart', 'dream', 'false', 'fruit', 'heavy', 'dress', 'fault', 'fully', 'hence', 'drill', 'fiber', 'funny', 'night', 'drink', 'field', 'giant', 'horse', 'drive', 'fifth', 'given', 'hotel', 'drove', 'fifty', 'glass', 'house', 'dying', 'fight', 'globe', 'human', 'eager', 'final', 'going', 'ideal', 'early', 'first', 'grace', 'image', 'earth', 'fixed', 'grade', 'index', 'eight', 'flash', 'grand', 'inner', 'elite', 'fleet', 'grant', 'input', 'empty', 'floor', 'grass', 'issue', 'enemy', 'fluid', 'great', 'irony', 'enjoy', 'focus', 'green', 'juice', 'enter', 'force', 'gross', 'joint', 'judge', 'metal', 'media', 'newly', 'known', 'local', 'might', 'noise', 'label', 'logic', 'minor', 'north', 'large', 'loose', 'minus', 'noted', 'laser', 'lower', 'mixed', 'novel', 'later', 'lucky', 'model', 'nurse', 'laugh', 'lunch', 'money', 'occur', 'layer', 'lying', 'month', 'ocean', 'learn', 'magic', 'moral', 'offer', 'lease', 'major', 'motor', 'often', 'least', 'maker', 'mount', 'order', 'leave', 'march', 'mouse', 'other', 'legal', 'music', 'mouth', 'ought', 'level', 'match', 'movie', 'paint', 'light', 'mayor', 'needs', 'paper', 'limit', 'meant', 'never', 'party', 'peace', 'power', 'radio', 'round', 'panel', 'press', 'raise', 'route', 'phase', 'price', 'range', 'royal', 'phone', 'pride', 'rapid', 'rural', 'photo', 'prime', 'ratio', 'scale', 'piece', 'print', 'reach', 'scene', 'pilot', 'prior', 'ready', 'scope', 'pitch', 'prize', 'refer', 'score', 'place', 'proof', 'right', 'sense', 'plain', 'proud', 'rival', 'serve', 'plane', 'prove', 'river', 'seven', 'plant', 'queen', 'quick', 'shall', 'plate', 'sixth', 'stand', 'shape', 'point', 'quiet', 'roman', 'share', 'pound', 'quite', 'rough', 'sharp', 'sheet', 'spare', 'style', 'times', 'shelf', 'speak', 'sugar', 'tired', 'shell', 'speed', 'suite', 'title', 'shift', 'spend', 'super', 'today', 'shirt', 'spent', 'sweet', 'topic', 'shock', 'split', 'table', 'total', 'shoot', 'spoke', 'taken', 'touch', 'short', 'sport', 'taste', 'tough', 'shown', 'staff', 'taxes', 'tower', 'sight', 'stage', 'teach', 'track', 'since', 'stake', 'teeth', 'trade', 'sixty', 'start', 'texas', 'treat', 'sized', 'state', 'thank', 'trend', 'skill', 'steam', 'theft', 'trial', 'sleep', 'steel', 'their', 'tried', 'slide', 'stick', 'theme', 'tries', 'small', 'still', 'there', 'truck', 'smart', 'stock', 'these', 'truly', 'smile', 'stone', 'thick', 'trust', 'smith', 'stood', 'thing', 'truth', 'smoke', 'store', 'think', 'twice', 'solid', 'storm', 'third', 'under', 'solve', 'story', 'those', 'undue', 'sorry', 'strip', 'three', 'union', 'sound', 'stuck', 'threw', 'unity', 'south', 'study', 'throw', 'until', 'space', 'stuff', 'tight', 'upper', 'upset', 'whole', 'waste', 'wound', 'urban', 'whose', 'watch', 'write', 'usage', 'woman', 'water', 'wrong', 'usual', 'train', 'wheel', 'wrote', 'valid', 'world', 'where', 'yield', 'value', 'worry', 'which', 'young', 'video', 'worse', 'while', 'youth', 'virus', 'worst', 'white', 'worth', 'visit', 'would', 'vital']
-var guessList = ["apple","mango","river","hyped","tokyo","title","carbo","proxy"]
+var wordList = ['about', 'alert', 'argue', 'beach', 'above', 'alike', 'arise', 'began', 'abuse', 'alive', 'array', 'begin', 'actor', 'allow', 'aside', 'begun', 'acute', 'alone', 'asset', 'being', 'admit', 'along', 'audio', 'below', 'adopt', 'alter', 'audit', 'bench', 'adult', 'among', 'avoid', 'billy', 'after', 'anger', 'award', 'birth', 'again', 'angle', 'aware', 'black', 'agent', 'angry', 'badly', 'blame', 'agree', 'apart', 'baker', 'blind', 'ahead', 'apple', 'bases', 'block', 'alarm', 'apply', 'basic', 'blood', 'album', 'arena', 'basis', 'board', 'boost', 'buyer', 'china', 'cover', 'booth', 'cable', 'chose', 'craft', 'bound', 'calif', 'civil', 'crash', 'brain', 'carry', 'claim', 'cream', 'brand', 'catch', 'class', 'crime', 'bread', 'cause', 'clean', 'cross', 'break', 'chain', 'clear', 'crowd', 'breed', 'chair', 'click', 'crown', 'brief', 'chart', 'clock', 'curve', 'bring', 'chase', 'close', 'cycle', 'broad', 'cheap', 'coach', 'daily', 'broke', 'check', 'coast', 'dance', 'brown', 'chest', 'could', 'dated', 'build', 'chief', 'count', 'dealt', 'built', 'child', 'court', 'death', 'debut', 'entry', 'forth', 'group', 'delay', 'equal', 'forty', 'grown', 'depth', 'error', 'forum', 'guard', 'doing', 'event', 'found', 'guess', 'doubt', 'every', 'frame', 'guest', 'dozen', 'exact', 'frank', 'guide', 'draft', 'exist', 'fraud', 'happy', 'drama', 'extra', 'fresh', 'harry', 'drawn', 'faith', 'front', 'heart', 'dream', 'false', 'fruit', 'heavy', 'dress', 'fault', 'fully', 'hence', 'drill', 'fiber', 'funny', 'night', 'drink', 'field', 'giant', 'horse', 'drive', 'fifth', 'given', 'hotel', 'drove', 'fifty', 'glass', 'house', 'dying', 'fight', 'globe', 'human', 'eager', 'final', 'going', 'ideal', 'early', 'first', 'grace', 'image', 'earth', 'fixed', 'grade', 'index', 'eight', 'flash', 'grand', 'inner', 'elite', 'fleet', 'grant', 'input', 'empty', 'floor', 'grass', 'issue', 'enemy', 'fluid', 'great', 'irony', 'enjoy', 'focus', 'green', 'juice', 'enter', 'force', 'gross', 'joint', 'judge', 'metal', 'media', 'newly', 'known', 'local', 'might', 'noise', 'label', 'logic', 'minor', 'north', 'large', 'loose', 'minus', 'noted', 'laser', 'lower', 'mixed', 'novel', 'later', 'lucky', 'model', 'nurse', 'laugh', 'lunch', 'money', 'occur', 'layer', 'lying', 'month', 'ocean', 'learn', 'magic', 'moral', 'offer', 'lease', 'major', 'motor', 'often', 'least', 'maker', 'mount', 'order', 'leave', 'march', 'mouse', 'other', 'legal', 'music', 'mouth', 'ought', 'level', 'match', 'movie', 'paint', 'light', 'mayor', 'needs', 'paper', 'limit', 'meant', 'never', 'party', 'peace', 'power', 'radio', 'round', 'panel', 'press', 'raise', 'route', 'phase', 'price', 'range', 'royal', 'phone', 'pride', 'rapid', 'rural', 'photo', 'prime', 'ratio', 'scale', 'piece', 'print', 'reach', 'scene', 'pilot', 'prior', 'ready', 'scope', 'pitch', 'prize', 'refer', 'score', 'place', 'proof', 'right', 'sense', 'plain', 'proud', 'rival', 'serve', 'plane', 'prove', 'river', 'seven', 'plant', 'queen', 'quick', 'shall', 'plate', 'sixth', 'stand', 'shape', 'point', 'quiet', 'roman', 'share', 'pound', 'quite', 'rough', 'sharp', 'sheet', 'spare', 'style', 'times', 'shelf', 'speak', 'sugar', 'tired', 'shell', 'speed', 'suite', 'title', 'shift', 'spend', 'super', 'today', 'shirt', 'spent', 'sweet', 'topic', 'shock', 'split', 'table', 'total', 'shoot', 'spoke', 'taken', 'touch', 'short', 'sport', 'taste', 'tough', 'shown', 'staff', 'taxes', 'tower', 'sight', 'stage', 'teach', 'track', 'since', 'stake', 'teeth', 'trade', 'sixty', 'start', 'texas', 'treat', 'sized', 'state', 'thank', 'trend', 'skill', 'steam', 'theft', 'trial', 'sleep', 'steel', 'their', 'tried', 'slide', 'stick', 'theme', 'tries', 'small', 'still', 'there', 'truck', 'smart', 'stock', 'these', 'truly', 'smile', 'stone', 'thick', 'trust', 'smith', 'stood', 'thing', 'truth', 'smoke', 'store', 'think', 'twice', 'solid', 'storm', 'third', 'under', 'solve', 'story', 'those', 'undue', 'sorry', 'strip', 'three', 'union', 'sound', 'stuck', 'threw', 'unity', 'south', 'study', 'throw', 'until', 'space', 'stuff', 'tight', 'upper', 'upset', 'whole', 'waste', 'wound', 'urban', 'whose', 'watch', 'write', 'usage', 'woman', 'water', 'wrong', 'usual', 'train', 'wheel', 'wrote', 'valid', 'world', 'where', 'yield', 'value', 'worry', 'which', 'young', 'video', 'worse', 'while', 'youth', 'virus', 'worst', 'white', 'worth', 'visit', 'would', 'vital']
+var guessList = ["apple", "mango", "river", "hyped", "tokyo", "title", "carbo", "proxy"]
 
 guessList = guessList.concat(wordList)
 
-var word = wordList[Math.floor(Math.random()*wordList.length)].toLocaleUpperCase();
+var word = wordList[Math.floor(Math.random() * wordList.length)].toLocaleUpperCase();
 console.log(word)
 
-window.onload = function(){
+window.onload = function () {
     initialize()
 }
 
-function resetTiles(){//This is to reset all the Tiles
-    setTimeout(function(){
-        for(let r=0 ; r<height;r++){
-            for(let c=0; c<width ; c++){
-                var Tile = document.getElementById(r.toString()+'-'+c.toString());
+function resetTiles() {//This is to reset all the Tiles
+    setTimeout(function () {
+        for (let r = 0; r < height; r++) {
+            for (let c = 0; c < width; c++) {
+                var Tile = document.getElementById(r.toString() + '-' + c.toString());
                 Tile.innerText = "";
-                if(Tile.classList.contains("correct")){
+                if (Tile.classList.contains("correct")) {
                     Tile.classList.remove("correct");
                 }
-                if(Tile.classList.contains("present")){
+                if (Tile.classList.contains("present")) {
                     Tile.classList.remove("present");
                 }
             }
@@ -41,23 +41,23 @@ function resetTiles(){//This is to reset all the Tiles
         col = 0;
         word = resetWord();//To reset the word
         document.getElementById("answer").innerText = ""// To reset the anser after display
-    },2000);
+    }, 2000);
     console.log("Reset Done");
 }
 
 function resetWord()//To reset the word
 {
-    var kind = wordList[Math.floor(Math.random()*wordList.length)].toLocaleUpperCase();
-    console.log("new word - ",kind);
+    var kind = wordList[Math.floor(Math.random() * wordList.length)].toLocaleUpperCase();
+    console.log("new word - ", kind);
     return kind;
 }
-function initialize(){ //Initalizes the whole Game
+function initialize() { //Initalizes the whole Game
 
-    for(let r=0 ; r<height ; r++){//To create Tiles for given height and width
-        
-        for(let c=0 ; c<width ; c++){
+    for (let r = 0; r < height; r++) {//To create Tiles for given height and width
+
+        for (let c = 0; c < width; c++) {
             let tile = document.createElement("span");
-            tile.id = r.toString()+'-'+c.toString();
+            tile.id = r.toString() + '-' + c.toString();
             tile.classList.add("tile")
             tile.innerText = " "
             document.getElementById("board").appendChild(tile);
@@ -66,77 +66,77 @@ function initialize(){ //Initalizes the whole Game
 
     //Keyboard
     let keyboard = [
-        ["Q","W","E","R","T","Y","U","I","O","P"],
-        ["A","S","D","F","G","H","J","K","L"," "],
-        ["Enter","Z","X","C","V","B","N","M","->"]
+        ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
+        ["A", "S", "D", "F", "G", "H", "J", "K", "L", " "],
+        ["Enter", "Z", "X", "C", "V", "B", "N", "M", "->"]
     ]
 
-    for(let i=0 ; i<keyboard.length ; i++){//To create a single row
+    for (let i = 0; i < keyboard.length; i++) {//To create a single row
         let currRow = keyboard[i];
         let keyboardRow = document.createElement("div");
         keyboardRow.classList.add("keyboard-row");
 
-        for(let j=0 ; j<currRow.length ; j++){ //to create each key in row 
+        for (let j = 0; j < currRow.length; j++) { //to create each key in row 
             let keyTile = document.createElement("div");
             let key = currRow[j];
             keyTile.innerText = key;
-            if(key=="Enter"){
-                keyTile.id= "Enter";
+            if (key == "Enter") {
+                keyTile.id = "Enter";
             }
-            else if(key=="->"){
+            else if (key == "->") {
                 keyTile.id = "Backspace";
             }
-            else if("A"<=key && key<="Z"){
-                keyTile.id = "Key"+key;
+            else if ("A" <= key && key <= "Z") {
+                keyTile.id = "Key" + key;
             }
-            keyTile.addEventListener("click",processKey);
+            keyTile.addEventListener("click", processKey);
 
-            if(key=="Enter"){
+            if (key == "Enter") {
                 keyTile.classList.add("enter-key-tile");
             }
-            else{
+            else {
                 keyTile.classList.add("key-tile");
             }
             keyboardRow.appendChild(keyTile);
         }
-        document.body.appendChild(keyboardRow);
-    }    
+        var k = document.getElementById("main").appendChild(keyboardRow);
+    }
     //System keyboard
-    document.addEventListener("keyup",(e)=>{
+    document.addEventListener("keyup", (e) => {
         processInput(e);
     })
 
-    function processKey(){
-        e = {"code" : this.id};
+    function processKey() {
+        e = { "code": this.id };
         processInput(e);
     }
 
-    function processInput(e){
+    function processInput(e) {
         console.log(e);
         console.log("im in the process Input");
-        if("KeyA" <=e.code && e.code <="KeyZ"){
-            if(col<width){
-                let currTile = document.getElementById(row.toString()+'-'+col.toString())
+        if ("KeyA" <= e.code && e.code <= "KeyZ") {
+            if (col < width) {
+                let currTile = document.getElementById(row.toString() + '-' + col.toString())
                 console.log(currTile);
-                    if(currTile.innerText==""){
-                        currTile.innerText = e.code[3];
-                        col+=1
-                    }
-                
+                if (currTile.innerText == "") {
+                    currTile.innerText = e.code[3];
+                    col += 1
+                }
+
             }
         }
-        else if(e.code=="Backspace"){
-            if(0<col && col<=width){
-                col-=1
+        else if (e.code == "Backspace") {
+            if (0 < col && col <= width) {
+                col -= 1
             }
-            let currTile = document.getElementById(row.toString()+'-'+col.toString())
+            let currTile = document.getElementById(row.toString() + '-' + col.toString())
             currTile.innerText = " ";
         }
-        else if(e.code == "Enter"){
+        else if (e.code == "Enter") {
             update();
         }
 
-        if(!gameOver && row==height){
+        if (!gameOver && row == height) {
             gameOver = true;
             document.getElementById("answer").innerText = word
         }
@@ -144,41 +144,41 @@ function initialize(){ //Initalizes the whole Game
 
 }
 
-function initializeStats(){
+function initializeStats() {
     var timer = document.createElement("div");
     timer.classList.add("timer");
     timer.innerHTML = currTime
 }
 
-function update(){//Operations to perform after each enter
+function update() {//Operations to perform after each enter
     let guess = "";
     document.getElementById("answer").innerText = "";
-    for(let c=0 ; c<width ; c++){
-        let currTile = document.getElementById(row.toString()+'-'+c.toString())
+    for (let c = 0; c < width; c++) {
+        let currTile = document.getElementById(row.toString() + '-' + c.toString())
         console.log(currTile);
         let letter = currTile.innerText;
-        guess +=letter;
+        guess += letter;
     }
     guess = guess.toLowerCase();
     console.log(guess);
-    if(!guessList.includes(guess)){
+    if (!guessList.includes(guess)) {
         document.getElementById("answer").innerText = "Guess again";
     }
-    if(guess.toUpperCase()==word){
+    if (guess.toUpperCase() == word) {
         console.log("word found");
         resetTiles();
     }
-    for(let i=0;i<guess.length;i++){
+    for (let i = 0; i < guess.length; i++) {
         letter = guess[i];
         letter = letter.toLocaleUpperCase();
         console.log(letter);
         console.log(word[i]);
         console.log(word.includes(letter));
-        if(word[i]==letter){
-            document.getElementById(row.toString()+'-'+i.toString()).classList.add("correct");
+        if (word[i] == letter) {
+            document.getElementById(row.toString() + '-' + i.toString()).classList.add("correct");
         }
-        else if(word.includes(letter)){
-            document.getElementById(row.toString()+'-'+i.toString()).classList.add("present");
+        else if (word.includes(letter)) {
+            document.getElementById(row.toString() + '-' + i.toString()).classList.add("present");
         }
 
     }
@@ -236,9 +236,9 @@ function update(){//Operations to perform after each enter
     //     }
     // }
     console.log("ended");
-    if(row+1==height){
+    if (row + 1 == height) {
         resetTiles();
     }
-    row+=1;
+    row += 1;
     col = 0;
 }
