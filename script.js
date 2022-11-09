@@ -2,7 +2,6 @@
 ["A","S","D","F","G","H","J","K","L"," "]
 ["Enter","Z","X","C","V","B","N","M","->"]*/
 
-
 var height = 6;
 var width = 5;
 

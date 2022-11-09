@@ -1,7 +1,7 @@
 body{
     font-family: 'Gill Sans','Gill Sans MT',Calibri,'Trebuchet MS','sans-serif';
     text-align: center;
-    background-image: linear-gradient(90deg, #33b7ce 50%, #3D6AEA 50%); 
+    background-color: #33b7ce; 
 }
 
 hr{
@@ -9,11 +9,11 @@ hr{
 }
 
 .main{
-    display: flex;
+    display: block;
 }
 
 #gameBar{
-    width: 50%;
+    width: 100vh;
     height: 100%;
 }
 #title{
@@ -68,10 +68,8 @@ hr{
 
 
 .keyboard-row{
-
-    padding-left:120px;
     width: 500px;
-    margin: 0 auto;
+    margin: 0 480px;
     display: flex;
     flex-wrap: wrap;
 }
